@@ -1,2 +1,2 @@
 # Pythonchallenge-solutions
-solutions for http://www.pythonchallenge.com
+Solutions for http://www.pythonchallenge.com
