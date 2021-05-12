@@ -5,6 +5,7 @@ puzzle = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. b
 orig_alphabets = "abcdefghijklmnopqrstuvwxyz"
 encoded_aphabets = "cdefghijklmnopqrstuvwxyzab"
 table = puzzle.maketrans(orig_alphabets, encoded_aphabets)
+#This shifts all letters by two, that is, a becomes c, b becomes d and so on.
 
 decoded_puzzle = puzzle.translate(table)
 print(decoded_puzzle)
