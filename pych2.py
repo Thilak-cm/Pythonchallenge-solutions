@@ -22,7 +22,7 @@ frequency = tuple(frequency)
 
 rare_letters = []
 i = 0
-#using tuple unmatching in for loop 
+#using tuple unpacking in for loop 
 for str1, f in frequency:
     i += 1
     if f == 1:
