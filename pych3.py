@@ -1,10 +1,10 @@
 import re
 from urllib.request import urlopen
 
-#url of the current pythonchallenge puzzle
+# url of the current pythonchallenge puzzle
 link = "http://www.pythonchallenge.com/pc/def/equality.html"
 
-#reading the contents of the page source
+# reading the contents of the page source
 url = urlopen(link)
 page_source = url.read().decode()
 
