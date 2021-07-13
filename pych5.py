@@ -1,4 +1,6 @@
 # PYTHON CHALLENGE 5:
+# To start off, click on banner.p in the page source
+# that will take you to a site with seemingly rubbish characters 
 
 import pickle  # peak hill sounds like pickle, the python serializing deserializing module
 from urllib.request import urlopen
