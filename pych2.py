@@ -17,7 +17,6 @@ data = re.findall("<!--(.*?)-->", page_source, re.DOTALL)[-1]
 
 pattern = re.compile("[a-z]") # to find all the letters in data
 rare_letters = pattern.findall(data)
-print(rare_letters)
 
 print("".join(rare_letters)) # joining all the elements of the list
 # copy the output and paste it in the url to progress to the next level
