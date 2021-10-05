@@ -4,35 +4,19 @@ from urllib.request import urlopen
 
 link = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing={}"
 next_nothing = 12345  # this  is the first nothing value
+text = "" # done so that while loop condition does not throw an error for the first iteration
 
+while "peak" not in text:
+    f = urlopen(link.format(next_nothing))
+    text = f.read().decode('utf-8') # reading content of link after decoding
 
-# this value reads contents of the link
-def read_content(url: str) -> str:
-    f = urlopen(url)
-    page_source = f.read().decode()
-    return page_source
-
-
-while True:
-    content = read_content(link.format(next_nothing))
-
-    # this if case covers the possibility of the content having no numbers in it
-    if re.search("\d+", content) == None:
-
-        # this if case checks if html is in the content, because if it is, then we have reached our answer
-        if "html" in content:
-            print(content)
-            break
-
-        print(content)
-        next_nothing = int(next_nothing) // 2  # content of this link says Divide by two to get next nothing
-        link.format(next_nothing)
-        print("and the next nothing is " + str(next_nothing))
+    if "nothing" not in text :
+        next_nothing = int(next_nothing) / 2 # Divide by two to get next nothing
+        print(text.format(next_nothing))
         continue
 
-    match = re.search("next nothing is (\d+)", content)
+    print(text)
+    match = re.search("the next nothing is (\d+)", text)
     next_nothing = match.group(1)
-    link.format(next_nothing)
-    print("and the next nothing is " + next_nothing)
 
-# Take the output and past it in the url to progress to the next level
+print("Use this in the url and proceed to the next level!")
